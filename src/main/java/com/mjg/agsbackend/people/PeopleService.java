@@ -15,9 +15,13 @@ public class PeopleService {
         return personRepository.save(person);
     }
 
+    public Person findById(Long id) {
+        return personRepository.findById(id)
+                .orElseThrow(() -> new PersonNotFoundException("Could not find person with id " + id));
+    }
+
     public List<Person> getAllPeople() {
         return personRepository.findAll();
     }
-
 
 }

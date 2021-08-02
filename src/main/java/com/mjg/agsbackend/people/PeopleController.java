@@ -13,6 +13,11 @@ public class PeopleController {
 
     private final PeopleService peopleService;
 
+    @GetMapping("/{id}")
+    public Person findById(@PathVariable Long id) {
+        return peopleService.findById(id);
+    }
+
     @GetMapping
     public List<Person> getAllPeople() {
         return peopleService.getAllPeople();
