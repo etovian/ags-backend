@@ -7,6 +7,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/people")
+@CrossOrigin(origins = "http://localhost:4200")
 @RequiredArgsConstructor
 public class PeopleController {
 
